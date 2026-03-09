@@ -23,4 +23,7 @@ Main features:
 
 The model learns to generate digits by **starting from random noise and gradually denoising it**.
 
+<p align="center">
+  <img src="assets/gifs/ddpm_animation.gif" width="256">
+</p>
 ---
