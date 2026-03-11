@@ -26,4 +26,34 @@ The model learns to generate digits by **starting from random noise and graduall
 <p align="center">
   <img src="assets/gifs/ddpm_animation.gif" width="256">
 </p>
+
+---
+
+### LDM (Latent Diffusion Model)
+
+Notebook: `LDM.ipynb`
+
+This notebook implements a **Latent Diffusion Model**, where diffusion is performed in a **compressed latent space** instead of directly on image pixels.
+
+The pipeline consists of two stages:
+
+1. **Autoencoder training** – learns a latent representation of the images.
+2. **Diffusion training in latent space** – a U-Net learns to denoise latent representations.
+
+Operating in latent space significantly reduces **computational cost and memory usage**, while still allowing high-quality image generation.
+
+Main features:
+
+- Convolutional **Autoencoder** for latent compression
+- **Latent-space diffusion training**
+- U-Net architecture for noise prediction
+- EMA sampling
+- Generation of new images by decoding denoised latent vectors
+
+### Generated Samples
+
+<p align="center">
+  <img src="assets/images/ldm_samples.png" width="256">
+</p>
+
 ---
