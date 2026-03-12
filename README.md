@@ -53,7 +53,33 @@ Main features:
 ### Generated Samples
 
 <p align="center">
-  <img src="assets/images/ldm_samples.png" width="256">
+  <img src="assets/images/ldm_samples.png" width="256" height="512">
+</p>
+
+---
+
+---
+
+### ViT (Vision Transformer)
+
+Notebook: `ViT.ipynb`
+
+This notebook implements a **Vision Transformer (ViT)** for image classification.
+
+Instead of using convolutional layers, the model processes images as a sequence of **patch embeddings** and applies the **Transformer encoder** architecture.
+
+Main features:
+
+- Image patch embedding
+- Positional embeddings
+- Transformer encoder blocks
+- Multi-head self-attention
+- Classification head
+
+The implementation demonstrates how transformer architectures can be applied to computer vision tasks.
+
+<p align="center">
+  <img src="assets/images/vit_samples.png" width="256" height="512">
 </p>
 
 ---
