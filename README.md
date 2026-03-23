@@ -10,7 +10,7 @@ The goal is to understand how diffusion models work by implementing them from sc
 
 ### DDPM (Denoising Diffusion Probabilistic Model)
 
-Notebook: `DDPM.ipynb`
+Notebook: `DDPM/DDPM.ipynb`
 
 This notebook implements a diffusion model trained on the **MNIST dataset** to generate handwritten digits.
 
@@ -31,7 +31,7 @@ The model learns to generate digits by **starting from random noise and graduall
 
 ### LDM (Latent Diffusion Model)
 
-Notebook: `LDM.ipynb`
+Notebook: `LDM/LDM.ipynb`
 
 This notebook implements a **Latent Diffusion Model**, where diffusion is performed in a **compressed latent space** instead of directly on image pixels.
 
@@ -58,11 +58,9 @@ Main features:
 
 ---
 
----
-
 ### ViT (Vision Transformer)
 
-Notebook: `ViT.ipynb`
+Notebook: `ViT/ViT.ipynb`
 
 This notebook implements a **Vision Transformer (ViT)** for image classification.
 
