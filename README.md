@@ -81,3 +81,27 @@ The implementation demonstrates how transformer architectures can be applied to 
 </p>
 
 ---
+
+### ControlNet
+
+Notebook: `ControlNet/ControlNet.ipynb`
+
+This notebook demonstrates **ControlNet** — a method for adding spatial conditioning to a pre-trained **Stable Diffusion** model. Instead of generating images purely from text, ControlNet allows guiding generation using structural signals such as **Canny edge maps**.
+
+The notebook uses a reference car image, extracts its Canny edges, and feeds the edge map alongside text prompts into a ControlNet-conditioned Stable Diffusion pipeline.
+
+Main features:
+
+- **Canny edge extraction** as a structural conditioning signal
+- **Stable Diffusion v1.5** + `lllyasviel/control_v11p_sd15_canny` ControlNet
+- `UniPCMultistepScheduler` for fast, high-quality sampling
+- Exploring **different text prompts** while preserving the source structure
+- Sweeping **ControlNet conditioning scale** (0.1 → 1.0) to analyze structure adherence
+
+### Generated Samples
+
+<p align="center">
+  <img src="assets/images/controlnet_samples.png" width="512">
+</p>
+
+---
