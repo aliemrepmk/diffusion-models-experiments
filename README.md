@@ -105,3 +105,37 @@ Main features:
 </p>
 
 ---
+
+### LoRA (Low-Rank Adaptation)
+
+Notebook: `LoRA/LoRA.ipynb`
+
+This notebook implements **LoRA** — a parameter-efficient fine-tuning technique that injects trainable low-rank matrices into a pre-trained network's weight layers, leaving the original weights frozen.
+
+The experiment trains an intentionally large MLP (`ExpensiveNet`, ~2.8 M parameters) to classify **MNIST digits**, then fine-tunes it on the digit **9** — on which the baseline performs worst — using only the LoRA parameters.
+
+The effective weight update follows:
+
+```
+W_eff = W + B · A · (α / r)
+```
+
+where **A** and **B** are the small trainable matrices, **r** is the rank, and **α** is a scaling constant.
+
+Main features:
+
+- Custom `LoRAParametrization` module using PyTorch's `torch.nn.utils.parametrize` API
+- Random Gaussian init for **A**, zero init for **B** — ensures Δ W = 0 at training start
+- `α / r` scaling to decouple rank from effective learning rate
+- Per-layer parameter counting (original vs. LoRA-added)
+- Selective freezing: only LoRA matrices are updated during fine-tuning
+- Integrity checks asserting original weights are unchanged post fine-tuning
+- `enable_disable_lora()` toggle to switch between adapted and original model at inference
+
+### Results
+
+<p align="center">
+  <img src="assets/images/lora.png" width="512">
+</p>
+
+---
