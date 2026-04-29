@@ -132,8 +132,6 @@ Main features:
 - Integrity checks asserting original weights are unchanged post fine-tuning
 - `enable_disable_lora()` toggle to switch between adapted and original model at inference
 
-### Results
-
 <p align="center">
   <img src="assets/images/lora.png" width="512">
 </p>
