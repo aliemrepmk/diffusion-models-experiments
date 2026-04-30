@@ -137,3 +137,27 @@ Main features:
 </p>
 
 ---
+
+### img2dataset (Image Collection)
+
+Scripts: `img2dataset/dataset.py`, `img2dataset/list.txt`
+
+A minimal image collection pipeline for bootstrapping local datasets using the [`img2dataset`](https://github.com/rom1504/img2dataset) library.
+
+The script reads a list of image URLs from `list.txt`, downloads them in parallel, resizes each image to **256×256** using **border padding**, and saves the results to a local `data/` directory. The output directory is wiped on every run to ensure a clean dataset state.
+
+Main features:
+
+- URL-driven collection via a plain `list.txt` file
+- Automatic cleanup of existing output before each run
+- Resize to 256×256 with `border` mode to preserve aspect ratio
+- High-throughput configuration: 32 processes / 256 threads
+
+**Usage:**
+
+```bash
+cd img2dataset
+python dataset.py
+```
+
+---
